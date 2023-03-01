@@ -68,7 +68,7 @@ func evaluate(expr: Expr) -> Int {
 }
 print(evaluate(expr: sum))
 
-// struct: ==================================================
+// struct & class: ================================================
 
 // structs are value types while class are ref types
 
@@ -107,3 +107,13 @@ func changeColorOfMac(mac: MacBook) {
 }
 changeColorOfMac(mac: myMacBook)
 myMacBook.color
+
+struct Bookstore {
+    var owner = "Me"
+    func sell() {
+//        owner = "Someone" // will throw error since immutable
+    }
+    mutating func mutableSell() {
+        owner = "Someone"
+    }
+}
